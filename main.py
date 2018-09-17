@@ -44,7 +44,13 @@ for meth in methods:
     print('top_left -> ', top_left)
     print('bottom_right -> ', bottom_right)
 
-    pyautogui.moveTo(top_left[0], top_left[1])
+    x = (bottom_right[0] + top_left[0]) / 2
+    y = (bottom_right[1] + top_left[1]) / 2
+
+    print('x -> ', x)
+    print('y -> ', y)
+
+    pyautogui.moveTo(x, y)
 
     plt.subplot(121),plt.title(meth),plt.imshow(res,cmap='gray'),plt.yticks([]),plt.xticks([])
     plt.subplot(122),plt.imshow(img,cmap='gray')
