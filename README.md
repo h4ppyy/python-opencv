@@ -1,15 +1,18 @@
 # python-opencv
 opencv template matching을 활용한 오버워치 에임핵
 
-### 개발환경 (Mac)
+### 개발환경 세팅 (Mac)
 <code>git clone https://github.com/h4ppyy/python-opencv</code>  
 <code>cd python-opencv</code>   
 <code>. venv/bin/activate</code>  
 <code>pip install requirements.txt</code>   
-<code>python hello.py</code> 
 
 ### matplotlib bugfix (Mac)
 <code>echo "backend: TkAgg" >> ~/.matplotlib/matplotlibrc</code>
+
+### 모듈 실행 (Mac)
+<code>python opencv.py</code>   
+<code>python screen.py</code>   
 
 <img src='one.jpg'></img>
 ##### <그림1. 스크린샷을 통한 이미지 추출>
