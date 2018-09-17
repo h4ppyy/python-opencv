@@ -3,6 +3,7 @@
 import cv2
 import numpy as np
 import pyscreenshot as ImageGrab
+import pyautogui
 from matplotlib import pyplot as plt
 
 #ImageGrab.grab().save("screen.jpg", "JPEG")
@@ -10,19 +11,19 @@ ImageGrab.grab().save("screen.png", "PNG")
 
 img = cv2.imread("screen.png",0)
 img2 = img.copy()
-template = cv2.imread("hp.png",0)
+template = cv2.imread("cookie.png",0)
 
 # template 이미지의 가로/세로
 w,h = template.shape[::-1]
 
 # Template Match Method
 methods = [
-    'cv2.TM_CCOEFF',
+    #'cv2.TM_CCOEFF',
     'cv2.TM_CCOEFF_NORMED',
-    'cv2.TM_CCORR',
-    'cv2.TM_CCORR_NORMED',
-    'cv2.TM_SQDIFF',
-    'cv2.TM_SQDIFF_NORMED'
+    #'cv2.TM_CCORR',
+    #'cv2.TM_CCORR_NORMED',
+    #'cv2.TM_SQDIFF',
+    #'cv2.TM_SQDIFF_NORMED'
 ]
 
 for meth in methods:
@@ -42,6 +43,8 @@ for meth in methods:
 
     print('top_left -> ', top_left)
     print('bottom_right -> ', bottom_right)
+
+    pyautogui.moveTo(top_left[0], top_left[1])
 
     plt.subplot(121),plt.title(meth),plt.imshow(res,cmap='gray'),plt.yticks([]),plt.xticks([])
     plt.subplot(122),plt.imshow(img,cmap='gray')
