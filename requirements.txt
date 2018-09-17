@@ -3,3 +3,4 @@ matplotlib
 pyscreenshot
 Pillow
 pyautogui
+pyobjc-framework-Quartz
